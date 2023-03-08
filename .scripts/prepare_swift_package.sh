@@ -41,6 +41,11 @@ assert_zip_content DotCamera.zip
 CHECKSUM=$(sha256sum DotCamera.zip | awk '{print $1}')
 sed -i "s/{checksum_camera}/$CHECKSUM/g" Package.swift
 
+curl -O "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-commons/$RELEASE_VERSION/DotFaceCommons.zip"
+assert_zip_content DotFaceCommons.zip
+CHECKSUM=$(sha256sum DotFaceCommons.zip | awk '{print $1}')
+sed -i "s/{checksum_face_commons}/$CHECKSUM/g" Package.swift
+
 curl -O "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-nfc/$RELEASE_VERSION/DotNfc.zip"
 assert_zip_content DotNfc.zip
 CHECKSUM=$(sha256sum DotNfc.zip | awk '{print $1}')
