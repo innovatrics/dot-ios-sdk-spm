@@ -10,34 +10,34 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "DotFaceLite",
-            targets: ["DotFaceLite", "SamFace", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons"]),
+            targets: ["DotFaceLite", "SamFace", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons", "DotCapture"]),
         .library(
             name: "DotDocument",
-            targets: ["DotDocument", "sam", "DotCore", "DotCamera"]),
+            targets: ["DotDocument", "sam", "DotCore", "DotCamera", "DotProtocolBuffers", "DotCapture"]),
         .library(
             name: "DotNfc",
             targets: ["DotNfc", "OpenSSL", "DotCore"]),
         .library(
             name: "DotFaceVerification",
-            targets: ["DotFaceVerification", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons"]),
+            targets: ["DotFaceVerification", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons", "DotCapture"]),
         .library(
             name: "DotFaceEyeGazeLiveness",
-            targets: ["DotFaceEyeGazeLiveness", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons"]),
+            targets: ["DotFaceEyeGazeLiveness", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons", "DotCapture"]),
         .library(
             name: "DotFaceExpressionNeutral",
-            targets: ["DotFaceExpressionNeutral", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons"]),
+            targets: ["DotFaceExpressionNeutral", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons", "DotCapture"]),
         .library(
             name: "DotFaceDetectionFast",
-            targets: ["DotFaceDetectionFast", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons"]),
+            targets: ["DotFaceDetectionFast", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons", "DotCapture"]),
         .library(
             name: "DotFaceBackgroundUniformity",
-            targets: ["DotFaceBackgroundUniformity", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons"]),
+            targets: ["DotFaceBackgroundUniformity", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons", "DotCapture"]),
         .library(
             name: "DotFaceDetectionBalanced",
-            targets: ["DotFaceDetectionBalanced", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons"]),
+            targets: ["DotFaceDetectionBalanced", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons", "DotCapture"]),
         .library(
             name: "DotFacePassiveLiveness",
-            targets: ["DotFacePassiveLiveness", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons"]),
+            targets: ["DotFacePassiveLiveness", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons", "DotCapture"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -48,19 +48,20 @@ let package = Package(
         .binaryTarget(name: "DotProtocolBuffers", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-protobuf/1.3.0/DotProtocolBuffers.zip", checksum: "22732f3f90fe82a6cdb0aea7d8a8390ec840517b76e0764cfda8ecb889b4276e"),
         .binaryTarget(name: "OpenSSL", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-openssl/1.1.0/OpenSSL.zip", checksum: "c241be4a102f8bc493f2e652c3e732663cbd4f6341cf65f6f6fbec720e0140d4"),
         .binaryTarget(name: "SamFace", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/sam-face/1.2.0/SamFace.zip", checksum: "a309d640fdf93eca446f92b1b99213395ca32631ee44d090b84453b932a9318f"),
-        .binaryTarget(name: "DotCore", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-core/6.1.0/DotCore.zip", checksum: "842bbdb32afaa5781ca3702a123e0a031238d566193b007432f31f3e046acff2"),
-        .binaryTarget(name: "DotCamera", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-camera/6.1.0/DotCamera.zip", checksum: "ac4d7b6b341cdd1d5817bff54b696797e1b8b497f979e5c49e48fd07d720eaed"),
-        .binaryTarget(name: "DotFaceCommons", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-commons/6.1.0/DotFaceCommons.zip", checksum: "1b3194ec4f717677530136ed34fd389874cbfbb08392102e82b376c8627f439a"),
-        .binaryTarget(name: "DotNfc", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-nfc/6.1.0/DotNfc.zip", checksum: "dacca9a1d963cf16f97212e8744df990818954f4d8d055ac64b3d75a047d5101"),
-        .binaryTarget(name: "DotDocument", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-document/6.1.0/DotDocument.zip", checksum: "0fe070678e62bc119630ce73e47c2592b7d1f98be57430b92244f0bd272c82c6"),
-        .binaryTarget(name: "DotFaceLite", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-lite/6.1.0/DotFaceLite.zip", checksum: "474ac9c098cd09c93cace8cca0c92c8d070f461a7a0eef82384dd50deffd59b8"),
-        .binaryTarget(name: "DotFaceCore", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-core/6.1.0/DotFaceCore.zip", checksum: "ed4ae59069a8f3225d5d84edb6229bf8df034fbe2a7d3715c1f636278beed959"),
-        .binaryTarget(name: "DotFaceVerification", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-verification/6.1.0/DotFaceVerification.zip", checksum: "f3e500990fc39f7586108f959860d5da9c0d16146b2eff1b4ea28697b6ee0234"),
-        .binaryTarget(name: "DotFaceEyeGazeLiveness", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-eye-gaze-liveness/6.1.0/DotFaceEyeGazeLiveness.zip", checksum: "1b781d23014833952edc8a40f6987d4ead1ce2e63986e6d7ea38e92ad8511795"),
-        .binaryTarget(name: "DotFaceExpressionNeutral", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-expression-neutral/6.1.0/DotFaceExpressionNeutral.zip", checksum: "5860e9e9e422be20e9d71314d89c462c5993329a6f373fd7b74895f16b898d41"),
-        .binaryTarget(name: "DotFaceDetectionFast", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-detection-fast/6.1.0/DotFaceDetectionFast.zip", checksum: "b47cf69fdfa528388d4d81a9e5882668d010dd3e67d06a76d7fc7bbfbd557a27"),
-        .binaryTarget(name: "DotFaceBackgroundUniformity", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-background-uniformity/6.1.0/DotFaceBackgroundUniformity.zip", checksum: "fe7a01cdbe4e4c2fd233ef55b57b2e4a44ef9fbeba63375b092f97170ecd668c"),
-        .binaryTarget(name: "DotFaceDetectionBalanced", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-detection-balanced/6.1.0/DotFaceDetectionBalanced.zip", checksum: "78f1b86e74877c45ffcc5d838e9144ae287e0567b603dfdd9c46e84d788a127c"),
-        .binaryTarget(name: "DotFacePassiveLiveness", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-passive-liveness/6.1.0/DotFacePassiveLiveness.zip", checksum: "ef3219a5bb201bf7b829b104676f7f381d0b6868a1755ecef8cd6ab40f059b5b"),
+        .binaryTarget(name: "DotCore", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-core/6.1.1/DotCore.zip", checksum: "e204ec13ae8ff811b6608eaa4fca55a857ce94e6d70ca8a8c10b00df45fd7ea4"),
+        .binaryTarget(name: "DotCapture", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-capture/6.1.1/DotCapture.zip", checksum: "35b47e0493eb0e6137aebcc6f937999dbf0eccbb5254cb57ca169e5bd5c4dbc4"),
+        .binaryTarget(name: "DotCamera", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-camera/6.1.1/DotCamera.zip", checksum: "3d4c9f34d493d2264fbc58278feb822855295068f9e9a5e2dfa2b873dcc817ce"),
+        .binaryTarget(name: "DotFaceCommons", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-commons/6.1.1/DotFaceCommons.zip", checksum: "132dc7db2208150112d1986a0f4410b4198fb454eb0a76f57b9d2d9c8f32814b"),
+        .binaryTarget(name: "DotNfc", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-nfc/6.1.1/DotNfc.zip", checksum: "b50a998c733e222e962b8c521a98ff4ae43cc338c1bfe1876f7d032eb5811ce5"),
+        .binaryTarget(name: "DotDocument", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-document/6.1.1/DotDocument.zip", checksum: "5210414948b96e64955bb5c889fd385be1bd6c5395137da94549b567128298a6"),
+        .binaryTarget(name: "DotFaceLite", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-lite/6.1.1/DotFaceLite.zip", checksum: "4dceb2cc02236947fcd4719cbfe39c290e70427fce852ff35e1a619403af954b"),
+        .binaryTarget(name: "DotFaceCore", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-core/6.1.1/DotFaceCore.zip", checksum: "ece145329a5fef6304698ee49d4ca3e1c76682d864be07f21b2e492949b0338c"),
+        .binaryTarget(name: "DotFaceVerification", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-verification/6.1.1/DotFaceVerification.zip", checksum: "45b9b93ac79342b3bcdbc241a354ba8d17853735cb0690c377dc8c555dd07284"),
+        .binaryTarget(name: "DotFaceEyeGazeLiveness", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-eye-gaze-liveness/6.1.1/DotFaceEyeGazeLiveness.zip", checksum: "db6f694c12afc2cb8512c5c9a370c47e783e626f70a859eeb60d2eb951c5bd10"),
+        .binaryTarget(name: "DotFaceExpressionNeutral", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-expression-neutral/6.1.1/DotFaceExpressionNeutral.zip", checksum: "4d51a221af33a4aeed4bd004f86e82b8ac3274860f3231cdd4a842f65560ad43"),
+        .binaryTarget(name: "DotFaceDetectionFast", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-detection-fast/6.1.1/DotFaceDetectionFast.zip", checksum: "ff3fabc09db694c76b09e5c00415a490847c736a004441ae180289992af9c42b"),
+        .binaryTarget(name: "DotFaceBackgroundUniformity", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-background-uniformity/6.1.1/DotFaceBackgroundUniformity.zip", checksum: "ef03a0bebd3afa44bbedd0380c2cbbeec71bd87c345b147223523f69171b94d2"),
+        .binaryTarget(name: "DotFaceDetectionBalanced", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-detection-balanced/6.1.1/DotFaceDetectionBalanced.zip", checksum: "38b5314e799123099b3cb3bcfe6cd1f1966f01b6cf525dd5c45298eeba83690e"),
+        .binaryTarget(name: "DotFacePassiveLiveness", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-passive-liveness/6.1.1/DotFacePassiveLiveness.zip", checksum: "602decb19b7e482fcd48412f4a01dff10a3588e1c7b1aae4dad7677bddd10a9e"),
     ]
 )
