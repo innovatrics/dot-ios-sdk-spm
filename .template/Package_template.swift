@@ -13,7 +13,7 @@ let package = Package(
             targets: ["DotFaceLite", "SamFace", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons", "DotCapture"]),
         .library(
             name: "DotDocument",
-            targets: ["DotDocument", "sam", "DotCore", "DotCamera", "DotCapture"]),
+            targets: ["DotDocument", "sam", "DotCore", "DotCamera", "DotProtocolBuffers", "DotCapture"]),
         .library(
             name: "DotNfc",
             targets: ["DotNfc", "OpenSSL", "DotCore"]),
