@@ -18,6 +18,9 @@ let package = Package(
             name: "DotNfc",
             targets: ["DotNfc", "OpenSSL", "DotCore"]),
         .library(
+            name: "DotFaceGlasses",
+            targets: ["DotFaceGlasses", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons", "DotCapture"]),
+        .library(
             name: "DotFaceVerification",
             targets: ["DotFaceVerification", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotCamera", "DotFaceCommons", "DotCapture"]),
         .library(
@@ -56,6 +59,7 @@ let package = Package(
         .binaryTarget(name: "DotDocument", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-document/{version}/DotDocument.zip", checksum: "{checksum_document}"),
         .binaryTarget(name: "DotFaceLite", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-lite/{version}/DotFaceLite.zip", checksum: "{checksum_face_lite}"),
         .binaryTarget(name: "DotFaceCore", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-core/{version}/DotFaceCore.zip", checksum: "{checksum_face_core}"),
+        .binaryTarget(name: "DotFaceGlasses", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-glasses/{version}/DotFaceGlasses.zip", checksum: "{checksum_glasses}"),
         .binaryTarget(name: "DotFaceVerification", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-verification/{version}/DotFaceVerification.zip", checksum: "{checksum_verification}"),
         .binaryTarget(name: "DotFaceEyeGazeLiveness", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-eye-gaze-liveness/{version}/DotFaceEyeGazeLiveness.zip", checksum: "{checksum_eye_gaze}"),
         .binaryTarget(name: "DotFaceExpressionNeutral", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-expression-neutral/{version}/DotFaceExpressionNeutral.zip", checksum: "{checksum_expression_neutral}"),

@@ -71,6 +71,11 @@ assert_zip_content DotFaceCore.zip
 CHECKSUM=$(sha256sum DotFaceCore.zip | awk '{print $1}')
 sed -i "s/{checksum_face_core}/$CHECKSUM/g" Package.swift
 
+curl -O "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-glasses/$RELEASE_VERSION/DotFaceGlasses.zip"
+assert_zip_content DotFaceGlasses.zip
+CHECKSUM=$(sha256sum DotFaceGlasses.zip | awk '{print $1}')
+sed -i "s/{checksum_glasses}/$CHECKSUM/g" Package.swift
+
 curl -O "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-verification/$RELEASE_VERSION/DotFaceVerification.zip"
 assert_zip_content DotFaceVerification.zip
 CHECKSUM=$(sha256sum DotFaceVerification.zip | awk '{print $1}')
