@@ -38,10 +38,10 @@ jobs:
           IFACE_VERSION: "${{github.event.client_payload.iface_version}}"
           ONNX_VERSION: "${{github.event.client_payload.onnx_version}}"
           
-      - name: Update openssl version
+      - name: Update dot openssl version
         if: github.event.client_payload.openssl_version != ''
         run: |
-          CHECKSUM=$(.scripts/compute_checksum.sh --component_url=https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-openssl/$OPENSSL_VERSION/OpenSSL.zip)
+          CHECKSUM=$(.scripts/compute_checksum.sh --component_url=https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-openssl/$OPENSSL_VERSION/DotOpenSSL.zip)
           sed -i "s/\(https:\/\/s3.eu-central-1.amazonaws.com\/ios-frameworks.innovatrics.com\/dot-openssl\/\)\([0-9\.]*\)\(\/.*checksum: \"\)\(.*\)\(\"\)/\1$OPENSSL_VERSION\3$CHECKSUM\5/g" .template/Package_template.swift
         env:
           OPENSSL_VERSION: "${{github.event.client_payload.openssl_version}}"
