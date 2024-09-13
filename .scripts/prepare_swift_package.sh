@@ -66,6 +66,11 @@ assert_zip_content DotDocument.zip
 CHECKSUM=$(sha256sum DotDocument.zip | awk '{print $1}')
 sed -i "s/{checksum_document}/$CHECKSUM/g" Package.swift
 
+curl -O "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-palm/$RELEASE_VERSION/DotPalm.zip"
+assert_zip_content DotPalm.zip
+CHECKSUM=$(sha256sum DotPalm.zip | awk '{print $1}')
+sed -i "s/{checksum_palm}/$CHECKSUM/g" Package.swift
+
 curl -O "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-lite/$RELEASE_VERSION/DotFaceLite.zip"
 assert_zip_content DotFaceLite.zip
 CHECKSUM=$(sha256sum DotFaceLite.zip | awk '{print $1}')
