@@ -15,8 +15,8 @@ let package = Package(
             name: "DotDocument",
             targets: ["DotDocument", "DotCore", "DotCamera", "DotProtocolBuffers", "DotDocumentCommons", "DotCapture"]),
         .library(
-            name: "DotPalm",
-            targets: ["DotPalm", "DotCore", "DotCamera", "DotProtocolBuffers", "DotCapture"]),
+            name: "DotPalmDetection",
+            targets: ["DotPalmDetection", "DotPalmCore", "DotCore", "DotCamera", "DotProtocolBuffers", "DotCapture"]),
         .library(
             name: "DotNfc",
             targets: ["DotNfc", "DotOpenSSL", "DotDocumentCommons", "DotCore"]),
@@ -56,7 +56,8 @@ let package = Package(
         .binaryTarget(name: "DotDocumentCommons", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-document-commons/{version}/DotDocumentCommons.zip", checksum: "{checksum_document_commons}"),
         .binaryTarget(name: "DotNfc", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-nfc/{version}/DotNfc.zip", checksum: "{checksum_nfc}"),
         .binaryTarget(name: "DotDocument", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-document/{version}/DotDocument.zip", checksum: "{checksum_document}"),
-        .binaryTarget(name: "DotPalm", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-palm/{version}/DotPalm.zip", checksum: "{checksum_palm}"),
+        .binaryTarget(name: "DotPalmCore", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-palm-core/{version}/DotPalmCore.zip", checksum: "{checksum_palm_core}"),
+        .binaryTarget(name: "DotPalmDetection", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-palm-detection/{version}/DotPalmDetection.zip", checksum: "{checksum_palm_detection}"),
         .binaryTarget(name: "DotFaceLite", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-lite/{version}/DotFaceLite.zip", checksum: "{checksum_face_lite}"),
         .binaryTarget(name: "DotFaceCore", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-core/{version}/DotFaceCore.zip", checksum: "{checksum_face_core}"),
         .binaryTarget(name: "DotFaceVerification", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-verification/{version}/DotFaceVerification.zip", checksum: "{checksum_verification}"),

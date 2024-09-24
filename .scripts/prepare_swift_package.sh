@@ -66,10 +66,15 @@ assert_zip_content DotDocument.zip
 CHECKSUM=$(sha256sum DotDocument.zip | awk '{print $1}')
 sed -i "s/{checksum_document}/$CHECKSUM/g" Package.swift
 
-curl -O "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-palm/$RELEASE_VERSION/DotPalm.zip"
-assert_zip_content DotPalm.zip
-CHECKSUM=$(sha256sum DotPalm.zip | awk '{print $1}')
-sed -i "s/{checksum_palm}/$CHECKSUM/g" Package.swift
+curl -O "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-palm-core/$RELEASE_VERSION/DotPalmCore.zip"
+assert_zip_content DotPalmCore.zip
+CHECKSUM=$(sha256sum DotPalmCore.zip | awk '{print $1}')
+sed -i "s/{checksum_palm_core}/$CHECKSUM/g" Package.swift
+
+curl -O "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-palm-detection/$RELEASE_VERSION/DotPalmDetection.zip"
+assert_zip_content DotPalmDetection.zip
+CHECKSUM=$(sha256sum DotPalmDetection.zip | awk '{print $1}')
+sed -i "s/{checksum_palm_detection}/$CHECKSUM/g" Package.swift
 
 curl -O "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-lite/$RELEASE_VERSION/DotFaceLite.zip"
 assert_zip_content DotFaceLite.zip
