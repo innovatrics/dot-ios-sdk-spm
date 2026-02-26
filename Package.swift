@@ -18,6 +18,10 @@ let package = Package(
             name: "DotPalmDetection",
             targets: ["DotPalmDetection", "DotPalmCore", "DotCore", "DotSerialization", "DotCamera", "DotProtocolBuffers", "DotCapture"]),
         .library(
+            name: "DotDocumentBarcode",
+            targets: ["DotDocumentBarcode", "DotDocument", "DotCore", "DotCapture"]
+        ),
+        .library(
             name: "DotNfc",
             targets: ["DotNfc", "DotOpenSSL", "DotDocumentCommons", "DotCore", "DotSerialization", "DotProtocolBuffers"]),
         .library(
@@ -57,6 +61,7 @@ let package = Package(
         .binaryTarget(name: "DotDocumentCommons", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-document-commons/9.2.0/DotDocumentCommons.zip", checksum: "94a9a9a62e1a287eae333f561b8bf0428f8ef67b8986a805a49ba02dc9766abc"),
         .binaryTarget(name: "DotNfc", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-nfc/9.2.0/DotNfc.zip", checksum: "149c4ed7cbaf14bdeced1a45a4394f859948a71ce3b7cce4306ee8308c578fd2"),
         .binaryTarget(name: "DotDocument", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-document/9.2.0/DotDocument.zip", checksum: "f25c766ba50c1838a6fdf6748f72c104487ef88a21c934047cd0c5a5c4957beb"),
+        .binaryTarget(name: "DotDocumentBarcode", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-document-barcode/9.2.0/DotDocumentBarcode.zip", checksum: "33e12edec01c1330a16aea5aa5cadf8a2714ad15f9c090790dba09a2e682700c"),
         .binaryTarget(name: "DotPalmCore", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-palm-core/9.2.0/DotPalmCore.zip", checksum: "d85917ceb9bebee81984492967e089497f69dbdc82b29ff5d90197590743eed5"),
         .binaryTarget(name: "DotPalmDetection", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-palm-detection/9.2.0/DotPalmDetection.zip", checksum: "790ac1356ccb38992b9bab698373bc1ad3d7d6ee5090f618847e96346b44f735"),
         .binaryTarget(name: "DotFaceLite", url: "https://s3.eu-central-1.amazonaws.com/ios-frameworks.innovatrics.com/dot-face-lite/9.2.0/DotFaceLite.zip", checksum: "d4c4f042de8d142168cd682742ce14f85d9b64aec5775871556bfdf2259213ad"),
