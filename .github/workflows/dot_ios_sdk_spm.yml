@@ -49,7 +49,7 @@ jobs:
           git config --global user.name 'Jakub Vallo'
           git config --global user.email 'jakub.vallo@innovatrics.com'
           git add -u
-          git commit -m "[dot_ios_sdk_spm_release workflow] release DOT iOS SDK Swift Package Manager $RELEASE_VERSION"
+          git commit -m "[dot_ios_sdk_spm_release workflow] release IDV iOS SDK Swift Package Manager $RELEASE_VERSION"
           git tag -a $RELEASE_VERSION -m "$RELEASE_VERSION"
           git push --follow-tags
         env:
