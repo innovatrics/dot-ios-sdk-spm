@@ -1,2 +1,2 @@
 # dot-ios-sdk-spm
-Innovatrics DOT iOS SDK Swift Package Manager repository.
+Innovatrics IDV iOS SDK Swift Package Manager repository.
