@@ -8,6 +8,11 @@ let package = Package(
     platforms: [.iOS(.v13)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
+        // Core substrate without any recognition module. DotFaceCommons is bundled intentionally: it is imported by the
+        // dot_core_ios Flutter plugin and aligns with the DotShared -> DotCore unification.
+        .library(
+            name: "DotCore",
+            targets: ["DotCore", "DotSerialization", "DotProtocolBuffers", "DotCamera", "DotCapture", "DotFaceCommons"]),
         .library(
             name: "DotFaceLite",
             targets: ["DotFaceLite", "DotProtocolBuffers", "DotCore", "DotSerialization", "DotCamera", "DotFaceCommons", "DotCapture"]),
@@ -30,6 +35,9 @@ let package = Package(
         .library(
             name: "DotNfc",
             targets: ["DotNfc", "DotOpenSSL", "DotDocumentCommons", "DotCore", "DotSerialization", "DotProtocolBuffers"]),
+        .library(
+            name: "DotFaceCore",
+            targets: ["DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotSerialization", "DotCamera", "DotFaceCommons", "DotCapture"]),
         .library(
             name: "DotFaceVerification",
             targets: ["DotFaceVerification", "DotFaceCore", "iface", "innoonnxruntime", "DotProtocolBuffers", "DotCore", "DotSerialization", "DotCamera", "DotFaceCommons", "DotCapture"]),
